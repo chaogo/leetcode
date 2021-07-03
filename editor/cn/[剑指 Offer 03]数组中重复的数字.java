@@ -23,6 +23,7 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int findRepeatNumber(int[] nums) {
+<<<<<<< HEAD
         for(int i=0; i<nums.length; i++){
             if(nums[i]==i) continue;
             if(nums[i]==nums[nums[i]]) return nums[i];
@@ -31,6 +32,19 @@ class Solution {
             nums[tmp] = tmp;
         }
         return -1;
+=======
+        HashMap<Integer, Integer> hashTable = new HashMap<Integer, Integer>();
+        int res;
+        for(int i=0; i<nums.length; i++) {
+            if(hashTable.containsValue(nums[i])){
+                res = nums[i];
+                break;
+            } else {
+                hashTable.put(i, nums[i]);
+            }
+        }
+        return res;
+>>>>>>> origin/master
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
